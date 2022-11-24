@@ -1,2 +1,1 @@
-<?php header("Location: index.html", TRUE, 301);
-?>
+<?php include_once("index.html") ?>
