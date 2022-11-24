@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+  
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="StylesheetApp.css" type="text/css">
+    <script src="JSECF.js" type="text/javascript"></script>
+    <title>Client 00000006</title>
+  </head>
+
+  <body>
+
+    <div id="ReturnToIndex">
+
+       <div id="ReturnBtn"><a href="index.html"><button class="btn" style="height: 50px ; width: 175px ; font-size: 16px; border-radius: 20%; border-width: 4px; ">&laquo Liste Partenaires</button></a></div>
+
+    </div>
+
+    <div class="ClientData">
+
+        <div id="ClientSix" class="ClientDetails inactif">
+            <div class="ImgClient"><a href="#"><img width="135px" height="110px" src="photoClientlist6.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="ListOne"> 
+                <ul>
+                    <li><b>id client :</b> 00000006</li>
+                    <li><b>Nom client :</b>Agathe Perrin</li>
+                    <li><b>Description :</b> Lorem ipsum dolor sit amet consectegur no asit est qunqua melee inos dies sit perocleistos</li>                   
+                </ul>
+            </div>
+            <div class="ListTwo">
+                <ul>
+                    <li><b>url :</b> <a href="https://www.google.com/" target="_blank" style="margin-left:8px ;">&laquo Lien vers le site du partenaire &raquo</a></li>
+                    <li><b>dpo :</b> John Doe</li>
+                    <li><b>Contact Tech :</b> Michel Dupont</li>
+                    <li><b>Contact Comm :</b> Louise Bernard</li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('ClientOne')">
+                    <span class="slider round"></span>
+                    
+                </label>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="ResearchDetails">
+
+        <div class="ReasearchByBranchID">
+            <form autocomplete="off" action="/action_page.php">
+                <div class="autocomplete" style="width:300px;">
+                    <p><b>Recherche par ID de la salle :</b></p>
+                    <input id="myInput" type="text" name="ClientName" placeholder="ID salle...">
+                </div>
+                <button class="btn" type="submit" name="submit" onclick="filterSelection(document.getElementById('myInput'))">Rechercher</button>
+            </form>
+            <script> autocomplete(document.getElementById("myInput"), BranchIdClientSix); </script>
+        </div>
+
+        <div class="ResearchActiv" id="Researchbtn" >
+            <button class="btn active" onclick="filterSelection('all');ChangeActivebtn()">Toutes</button>
+            <button class="btn" onclick="filterSelection('activ');ChangeActivebtn()">Actif</button>
+            <button class="btn" onclick="filterSelection('inactif');ChangeActivebtn()">Inactif</button>
+        </div>
+
+        <div class="AddButton">
+            <button class="btn" onClick="openForm()" style="height: 50px ; width: 100px ; font-size: 14px; border-radius: 20%; border-width: 3px; font-weight: bold;">&laquo Ajouter &raquo</button>
+        </div>
+        <div class="login-popup">
+            <div class="form-popup" id="popupForm">
+              <form method="post" action="action_ajouter.php" class="form-container">
+                <div class="FormTextInput">
+                    <div class="LabelStyle">
+                        <label for="Id_Client" >
+                            <strong>id client :</strong>
+                        </label>
+                        <input type="text" id="Id_Client" placeholder="Votre id client (8 chiffres)" name="Id_Client" required />
+                    </div>    
+                    <div>
+                        <label for="Id_install">
+                            <strong>id installation :</strong>
+                        </label>
+                        <input type="text" id="Id_install" placeholder="votre id installation (6 chiffres)" name="Id_install" required />
+                    </div>
+                    <div class="LabelStyle">
+                        <label for="active" >
+                            <strong>active :</strong>
+                        </label>
+                        <input type="text" id="Active" placeholder="Salle active ou non active " name="active" required />
+                    </div>
+                    <div class="LabelStyle">
+                        <label for="Id_branch" >
+                            <strong>id salle :</strong>
+                        </label>
+                        <input type="text" id="Id_branch" placeholder="id salle (4 chiffres)" name="Id_branch" required />
+                    </div>                        
+                </div>
+                <div class="FormToggle">
+
+                    <div class="ToggleForm">
+                        <div id="Members_read" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Lecture membres :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Members_read" value="Check" onclick="SwitchClass('Members_read')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Members_write" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Ecriture membres :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Members_write" value="Check" onclick="SwitchClass('Members_write')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Members_payment_schedules_read" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Voir programmation paiement membres :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Members_payment_schedules_read" value="Check" onclick="SwitchClass('Members_payment_schedules_read')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Members_products_read" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Voir produit membres :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Members_products_read" value="Check" onclick="SwitchClass('Members_products_read')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Members_schedules_read" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Voir programme membres :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Members_schedules_read" value="Check" onclick="SwitchClass('Members_schedules_read')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Members_add" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Ajouter membres :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Members_add" value="Check" onclick="SwitchClass('Members_add')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Payment_schedules_read" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Voir programmation paiement :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Payment_schedules_read" value="Check" onclick="SwitchClass('Payment_schedules_read')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Payment_schedules_write" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Editer programmation paiement :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Payment_schedules_write" value="Check" onclick="SwitchClass('Payment_schedules_write')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Members_statistics_read" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Voir statistiques membres :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Members_statistics_read" value="Check" onclick="SwitchClass('Members_statistics_read')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                    <div class="ToggleForm" style="padding-top:5px ;">
+                        <div id="Payment_day_read" class="inactif"><strong style="border: solid rgb(43, 196, 43) 1px;">Voir jour de paiement :</strong></div>
+                        
+                        <div>
+                            <label class="switch" style="color: black;">                                                        
+                                <input type="checkbox" name="Payment_day_read" value="Check" onclick="SwitchClass('Payment_day_read')">
+                            <span class="slider round"></span>                        
+                            </label>
+                        </div>               
+                    </div>
+
+                </div>
+                <button type="submit" name="submit" class="btn">Envoyer</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+              </form>
+            </div>
+          </div>
+    </div>
+
+    <div id="FilterBranchOne" class="FilterBranch filterDiv inactif show">
+        <div id="BranchOne" class="BranchData">
+
+            <div class="ImgClient2"><a href="DetailsClient00000006.html"><img width="110px" height="80px" src="photoClientlist6.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="BranchDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000006</li>
+                    <li><b>id installation :</b> 122112</li>
+                    <li><b>id salle :</b> 0016</li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('FilterBranchOne')">
+                    <span class="slider round"></span>
+                        
+                </label>               
+            </div>
+            
+        </div>
+    
+        <div id="ToggleBranchOne" class="OptionBranch">
+            <button class="BranchToggle" onclick="OptionBranchToggle('ToggleBranchOne','SeeOption1')">+</button>
+            <p style="padding-right:10px ;">Permissions</p>
+        </div>
+
+        <div id="SeeOption1" class="SeeOption">
+            
+            <div id="ToggleBranchOne" class="OptionToggle">
+                <button class="BranchToggle" onclick="OptionBranchToggle('ToggleBranchOne', 'SeeOption1')">+</button>
+                <p style="padding-right:10px ;">Permissions</p>
+            </div>
+
+            <div class="ListOption">
+            
+                <ul style="list-style: none ;">
+                    <li><div class="Togglebutton"><label id="Members_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Lecture membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_write" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_write')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Ecriture membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_payment_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_payment_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programmation paiement membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_products_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_products_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir produit membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programme membres</b></div></li>
+                </ul>
+            </div>
+            
+            <div class="ListOption">
+            
+                <ul style="list-style: none ;">
+                    <li><div class="Togglebutton"><label id="Members_add" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_add')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Ajouter membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programmation paiement</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_schedules_write" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_schedules_write')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Editer programmation paiement</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_statistics_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_statistics_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir statistiques membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_day_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_day_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir jour de paiement</b></div></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="FilterBranchTwo" class="FilterBranch filterDiv inactif show">
+        <div id="BranchTwo" class="BranchData">
+
+            <div class="ImgClient2"><a href="DetailsClient00000006.html"><img width="110px" height="80px" src="photoClientlist6.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="BranchDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000006</li>
+                    <li><b>id installation :</b> 011001</li>
+                    <li><b>id salle :</b> 0017</li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('FilterBranchTwo')">
+                    <span class="slider round"></span>
+                        
+                </label>               
+            </div>
+            
+        </div>
+    
+        <div id="ToggleBranchTwo" class="OptionBranch">
+            <button class="BranchToggle" onclick="OptionBranchToggle('ToggleBranchTwo','SeeOption2')">+</button>
+            <p style="padding-right:10px ;">Permissions</p>
+        </div>
+
+        <div id="SeeOption2" class="SeeOption">
+            
+            <div id="ToggleBranchOne" class="OptionToggle">
+                <button class="BranchToggle" onclick="OptionBranchToggle('ToggleBranchTwo', 'SeeOption2')">+</button>
+                <p style="padding-right:10px ;">Permissions</p>
+            </div>
+
+            <div class="ListOption">
+            
+                <ul style="list-style: none ;">
+                    <li><div class="Togglebutton"><label id="Members_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Lecture membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_write" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_write')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Ecriture membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_payment_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_payment_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programmation paiement membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_products_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_products_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir produit membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programme membres</b></div></li>
+                </ul>
+            </div>
+            
+            <div class="ListOption">
+            
+                <ul style="list-style: none ;">
+                    <li><div class="Togglebutton"><label id="Members_add" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_add')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Ajouter membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programmation paiement</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_schedules_write" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_schedules_write')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Editer programmation paiement</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_statistics_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_statistics_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir statistiques membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_day_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_day_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir jour de paiement</b></div></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="FilterBranchThree" class="FilterBranch filterDiv inactif show">
+        <div id="BranchTwo" class="BranchData">
+
+            <div class="ImgClient2"><a href="DetailsClient00000006.html"><img width="110px" height="80px" src="photoClientlist6.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="BranchDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000006</li>
+                    <li><b>id installation :</b> 233223</li>
+                    <li><b>id salle :</b> 0018</li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('FilterBranchThree')">
+                    <span class="slider round"></span>
+                        
+                </label>               
+            </div>
+            
+        </div>
+    
+        <div id="ToggleBranchThree" class="OptionBranch">
+            <button class="BranchToggle" onclick="OptionBranchToggle('ToggleBranchThree','SeeOption3')">+</button>
+            <p style="padding-right:10px ;">Permissions</p>
+        </div>
+
+        <div id="SeeOption3" class="SeeOption">
+            
+            <div id="ToggleBranchOne" class="OptionToggle">
+                <button class="BranchToggle" onclick="OptionBranchToggle('ToggleBranchThree', 'SeeOption3')">+</button>
+                <p style="padding-right:10px ;">Permissions</p>
+            </div>
+
+            <div class="ListOption">
+            
+                <ul style="list-style: none ;">
+                    <li><div class="Togglebutton"><label id="Members_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Lecture membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_write" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_write')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Ecriture membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_payment_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_payment_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programmation paiement membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_products_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_products_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir produit membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programme membres</b></div></li>
+                </ul>
+            </div>
+            
+            <div class="ListOption">
+            
+                <ul style="list-style: none ;">
+                    <li><div class="Togglebutton"><label id="Members_add" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_add')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Ajouter membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_schedules_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_schedules_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir programmation paiement</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_schedules_write" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_schedules_write')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Editer programmation paiement</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Members_statistics_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Members_statistics_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir statistiques membres</b></div></li>
+                    <li style="padding-top:8px ;"><div class="Togglebutton"><label id="Payment_day_read" class="switch inactif"><input type="checkbox" onclick="SwitchClass('Payment_day_read')"><span class="slider round"></span></label><b style="text-decoration:none; margin-left: 5px">Voir jour de paiement</b></div></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="Pagination">
+        <a href="#">Previous</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">Next</a>
+    </div>
+
+
+
+  </body>

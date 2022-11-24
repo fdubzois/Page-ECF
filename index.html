@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+  
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="StylesheetApp.css" type="text/css">
+    <script src="JSECF.js" type="text/javascript"></script>
+    <title>Liste Client</title>
+  </head>
+
+  <body>
+
+    <!-- This part control research field with filter on element in js for activ/unactiv and php script for dynamic input field by click on submit -->
+
+    <div id="ResearchFields">
+        
+        <div class="ReasearchByName">
+            
+            <form method="post" autocomplete="off" action="action_page.php">
+                <div class="autocomplete" style="width:300px;">
+                    <p><b>Recherche par nom du client :</b></p>
+                    <input id="myInput" type="text" name="ClientName" placeholder="Nom du client...">
+                </div>
+                <button class="btn" type="submit" name="submit" onclick="filterSelection(document.getElementById('myInput'))">Rechercher</button>
+            </form>
+            <script> autocomplete(document.getElementById("myInput"), AllClientName); </script>
+        </div>
+        
+        <div class="ReasearchByID">
+            
+            <form method="post" autocomplete="off" action="action_page.php">
+                <div class="autocomplete" style="width:300px;">
+                    <p><b>Recherche par numero id du client :</b></p>
+                    <input id="myIDInput" type="text" name="ClientID" placeholder="ID du client...">
+                </div>
+                <button class="btn" type="submit" name="submit" onclick="filterSelection(document.getElementById('myInput'))">Rechercher</button>
+            </form>
+            <script> autocomplete(document.getElementById("myIDInput"), AllClientsID); </script>
+        </div>
+        
+        <div class="ResearchActiv" id="Researchbtn" >
+            <button class="btn active" onclick="filterSelection('all');ChangeActivebtn()">Tous</button>
+            <button class="btn" onclick="filterSelection('activ');ChangeActivebtn()">Actif</button>
+            <button class="btn" onclick="filterSelection('inactif');ChangeActivebtn()">Inactif</button>
+        </div>  
+    
+    </div>
+
+    <!-- This part control the client info who got class and toggle button to get filter -->
+
+    <div id="ClientList" class="container">
+
+        <div id="ClientOne" class="ClientInfo filterDiv inactif show">
+            <div class="ImgClient2"><a href="DetailsClient00000001.html"><img width="140px" height="100px" src="photoClientlist1.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="ShortDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000001</li>
+                    <li><b>Nom client :</b> Quentin Gaillard</li>
+                    <li><b>Description :</b> Lorem ipsum dolor sit amet</li>
+                    <li><b>url :</b> <a href="https://www.google.com/" target="_blank" style="margin-left:8px ;">&laquo Lien vers le site du partenaire &raquo</a></li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('ClientOne')">
+                    <span class="slider round"></span>
+                    
+                </label>
+                
+            </div>
+        </div>
+
+        <div id="ClientTwo" class="ClientInfo filterDiv inactif show">
+            <div class="ImgClient2"><a href="DetailsClient00000002.html"><img width="140px" height="100px" src="photoClientlist2.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="ShortDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000002</li>
+                    <li><b>Nom client :</b> Alexis Fabre</li>
+                    <li><b>Description :</b> Lorem ipsum dolor sit amet</li>
+                    <li><b>url :</b> <a href="https://www.google.com/" target="_blank" style="margin-left:8px ;">&laquo Lien vers le site du partenaire &raquo</a></li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('ClientTwo')">
+                    <span class="slider round"></span>                    
+                </label>
+            </div>
+        </div>
+
+        <div id="ClientThree" class="ClientInfo filterDiv inactif show">
+            <div class="ImgClient2"><a href="DetailsClient00000003.html"><img width="140px" height="100px" src="photoClientlist3.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="ShortDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000003</li>
+                    <li><b>Nom client :</b> Adam Pesquet</li>
+                    <li><b>Description :</b> Lorem ipsum dolor sit amet</li>
+                    <li><b>url :</b> <a href="https://www.google.com/" target="_blank" style="margin-left:8px ;">&laquo Lien vers le site du partenaire &raquo</a></li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('ClientThree')">
+                    <span class="slider round"></span>                    
+                </label>
+            </div>
+        </div>
+
+        <div id="ClientFour" class="ClientInfo filterDiv inactif show">
+            <div class="ImgClient2"><a href="DetailsClient00000004.html"><img width="140px" height="100px" src="photoClientlist4.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="ShortDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000004</li>
+                    <li><b>Nom client :</b> Léandre Dupuich</li>
+                    <li><b>Description :</b> Lorem ipsum dolor sit amet</li>
+                    <li><b>url :</b> <a href="https://www.google.com/" target="_blank" style="margin-left:8px ;">&laquo Lien vers le site du partenaire &raquo</a></li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('ClientFour')">
+                    <span class="slider round"></span>                    
+                </label>
+            </div>
+        </div>
+
+        <div id="ClientFive" class="ClientInfo filterDiv inactif show">
+            <div class="ImgClient2"><a href="DetailsClient00000005.html"><img width="140px" height="100px" src="photoClientlist5.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="ShortDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000005</li>
+                    <li><b>Nom client :</b> Charlotte Deparrois</li>
+                    <li><b>Description :</b> Lorem ipsum dolor sit amet</li>
+                    <li><b>url :</b> <a href="https://www.google.com/" target="_blank" style="margin-left:8px ;">&laquo Lien vers le site du partenaire &raquo</a></li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('ClientFive')">
+                    <span class="slider round"></span>                    
+                </label>
+            </div>
+        </div>
+
+        <div id="ClientSix" class="ClientInfo filterDiv inactif show">
+            <div class="ImgClient2"><a href="DetailsClient00000006.html"><img width="140px" height="100px" src="photoClientlist6.jpg" style="margin: 5px; border-radius: 30%;"></a></div>
+            <div class="ShortDetails"> 
+                <ul>
+                    <li><b>id client :</b> 00000006</li>
+                    <li><b>Nom client :</b> Agathe Perrin</li>
+                    <li><b>Description :</b> Lorem ipsum dolor sit amet</li>
+                    <li><b>url :</b> <a href="https://www.google.com/" target="_blank" style="margin-left:8px ;">&laquo Lien vers le site du partenaire &raquo</a></li>
+                </ul>
+            </div>
+            <div class="Togglebutton">
+                <label class="switch">
+                    <input type="checkbox" onclick="SwitchClass('ClientSix')">
+                    <span class="slider round"></span>                    
+                </label>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- This part is for pagination (need link href)-->
+
+    <div id="Pagination">
+        <a href="#">Previous</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">Next</a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
