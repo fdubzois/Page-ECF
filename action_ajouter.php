@@ -123,7 +123,7 @@ if(isset($_POST['submit'])) {
 
         Confirmer vous ces informations ?
 
-        <a href='http://localhost/TestSiteEcf/index.html'><button style='border: solid rgb(43, 196, 43) 2px; color: rgb(43, 196, 43); background-color: white; border-radius: 20%;'>Confirmer</button></a>
+        <a href='https://web-app-ecf.herokuapp.com/'><button style='border: solid rgb(43, 196, 43) 2px; color: rgb(43, 196, 43); background-color: white; border-radius: 20%;'>Confirmer</button></a>
         
     ";
 
@@ -134,7 +134,7 @@ if(isset($_POST['submit'])) {
     fclose($file);
 
     $AlertTest = "Votre ajout a bien été pris en compte veuillez valider vos informations via le mail qui vous a été envoyé, Merci !";
-    echo "<script type='text/javascript'>alert('$AlertTest');window.location.href = 'http://localhost/TestSiteEcf/index.html';</script>";
+    echo "<script type='text/javascript'>alert('$AlertTest');window.location.href = 'https://web-app-ecf.herokuapp.com/';</script>";
 
     
 
